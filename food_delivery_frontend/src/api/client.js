@@ -6,6 +6,9 @@
 const API_BASE =
   process.env.REACT_APP_API_BASE ||
   process.env.REACT_APP_BACKEND_URL ||
+  // Preview manager commonly injects these without REACT_APP_ prefix
+  process.env.API_BASE ||
+  process.env.BACKEND_URL ||
   "http://localhost:3001";
 
 /**

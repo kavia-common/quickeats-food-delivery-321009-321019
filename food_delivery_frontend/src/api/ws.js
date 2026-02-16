@@ -10,6 +10,8 @@ import { getApiBase } from "./client";
 
 const WS_URL =
   process.env.REACT_APP_WS_URL ||
+  // Preview manager commonly injects this without REACT_APP_ prefix
+  process.env.WS_URL ||
   (() => {
     const base = getApiBase();
     const wsBase = base.startsWith("https://")
